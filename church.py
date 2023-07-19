@@ -16,7 +16,12 @@ def remove_class(element, class_name):
 def add_class(element, class_name):
     element.element.classList.add(class_name)
 
+def roomIdFromName(room_name):
+    return 0
+
 
 def openroom(room_name:str):
     print('YOU ARE IN ROOM %s'%room_name)
     print('checking the database...')
+    print('looking for room %s'%room_name+'with ID %s'%int(roomIdFromName(room_name)))
+    
