@@ -15,3 +15,7 @@ def remove_class(element, class_name):
 
 def add_class(element, class_name):
     element.element.classList.add(class_name)
+
+
+def openroom(room_name:str):
+    print('YOU ARE IN ROOM $s'%room_name)
