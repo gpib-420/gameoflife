@@ -18,4 +18,4 @@ def add_class(element, class_name):
 
 
 def openroom(room_name:str):
-    print('YOU ARE IN ROOM $s'%room_name)
+    print('YOU ARE IN ROOM %s'%room_name)
