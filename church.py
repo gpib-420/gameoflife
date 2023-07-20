@@ -17,17 +17,14 @@ def add_class(element, class_name):
     element.element.classList.add(class_name)
 
 def roomIdFromName(input) {
-code_1 = input[0].charCodeAt(0)*2**32
-code_2 = input[1].charCodeAt(0)*2**16
-code_3 = input[2].charCodeAt(0)*2**0
+    code_1 = input[0].charCodeAt(0)*2**32
+    code_2 = input[1].charCodeAt(0)*2**16
+    code_3 = input[2].charCodeAt(0)*2**0
 
-result = code_1+code_2+code_3
+    result = code_1+code_2+code_3
 
 return result
-}
 
-
-}
 def openRoom(room_name:str):
     print('YOU ARE IN ROOM %s'%room_name)
     print('checking the database...')
