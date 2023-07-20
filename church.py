@@ -16,7 +16,7 @@ def remove_class(element, class_name):
 def add_class(element, class_name):
     element.element.classList.add(class_name)
 
-def roomIdFromName(input) {
+def roomIdFromName(input):
     code_1 = input[0].charCodeAt(0)*2**32
     code_2 = input[1].charCodeAt(0)*2**16
     code_3 = input[2].charCodeAt(0)*2**0
