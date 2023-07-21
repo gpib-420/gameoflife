@@ -17,16 +17,29 @@ def add_class(element, class_name):
     element.element.classList.add(class_name)
 
 def roomIdFromName(input):
-    code_1 = input[0].charCodeAt(0)*2**32
-    code_2 = input[1].charCodeAt(0)*2**16
-    code_3 = input[2].charCodeAt(0)*2**0
+    code_1 = ord(input[0])*2**32
+    code_2 = ord(input[1])*2**16
+    code_3 = ord(input[2])*2**0
 
     result = code_1+code_2+code_3
 
-return result
+    return result
 
 def openRoom(room_name:str):
     print('YOU ARE IN ROOM %s'%room_name)
     print('checking the database...')
     print('looking for room %s'%room_name+'with ID %s'%int(roomIdFromName(room_name)))
+
+# define class room
+class room(object):
+    id=0
+    name='000'
+    html_page = None
+    def __init__(self,args=0):
+        print('room created. Id %d'%self.id)
+
+
+
+
+
     
