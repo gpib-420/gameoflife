@@ -37,6 +37,25 @@ def openRoom(room_name:str):
     newRoom = room()
     return room
 
+def connect_to_database():
+    # test mysql module for the database
+    import mysql.connector
+
+    from rich import print
+    print('searching for sinners.')
+
+    try:
+        mydb = mysql.connector.connect(user='rstx', password="basedbase666", host="localhost", database="sinners",
+                                       auth_plugin='mysql_native_password')
+
+        # Printing the connection object
+        print(mydb)
+
+        return(mydb)
+
+    except:
+        print('can''tconnect to db')
+        return(-1)
 
 # define class room
 class room(object):
@@ -46,7 +65,12 @@ class room(object):
     def __init__(self,name=None):
         if name:
             self.id = int(roomIdFromName(name))
-            print('room created. Id %d'%self.id)
+            try:
+                db = connect_to_database() # connect to db, get db to do stuff
+            except:
+                print('cant access db on loser.church')
+
+            print('room being created. Id %d'%self.id)
             loserPageTemplate = '''
                     <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
                     <html>
