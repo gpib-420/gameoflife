@@ -34,14 +34,13 @@ def openRoom(room_name:str):
     print('do mysql things with that database and get all comments for room %s' % room_name)
     print('if no comments for %s, create that room' % room_name)
     print('if found comments for %s, open room and populate with comments' % room_name)
-    newRoom = room()
+    newRoom = room(name=room_name)
     return room
 
 def connect_to_database():
     # test mysql module for the database
     import mysql.connector
 
-    from rich import print
     print('searching for sinners.')
 
     try:
@@ -67,6 +66,7 @@ class room(object):
             self.id = int(roomIdFromName(name))
             try:
                 db = connect_to_database() # connect to db, get db to do stuff
+                print('lol')
             except:
                 print('cant access db on loser.church')
 
