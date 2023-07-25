@@ -39,17 +39,17 @@ def openRoom(room_name:str):
 
 def connect_to_database():
     # test mysql module for the database
-    import pymysql
-    
-    print('searching for sinners.')
-    connection = pymysql.connect(user='rstx', passwd='basedbase666', host='loser.church', database='sinners')
-    cursor = connection.cursor()
-    query = ("SELECT * FROM Sins")
-    cursor.execute(query)
-    for item in cursor:
-        print item
+    import mysql.connector
 
-    return(connection)
+    print('searching for sinners.')
+
+    try:
+        mydb = mysql.connector.connect(user='rstx', password="basedbase666", host="http://loser.church", database="sinners")
+
+        # Printing the connection object
+        print(mydb)
+
+        return(mydb)
 
     except:
         print('can''t connect to db on loser.church')
