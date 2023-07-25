@@ -28,7 +28,12 @@ def roomIdFromName(input):
 def openRoom(room_name:str):
     print('YOU ARE IN ROOM %s'%room_name)
     print('checking the database...')
-    print('looking for room %s'%room_name+'with ID %s'%int(roomIdFromName(room_name)))
+    print('looking for room %s'%room_name+' with ID %s'%int(roomIdFromName(room_name)))
+    database = 0
+    print('do mysql things with that database and get all comments for room %s' % room_name)
+    print('if no comments for %s, create that room' % room_name)
+    print('if found comments for %s, open room and populate with comments' % room_name)
+
 
 # define class room
 class room(object):
