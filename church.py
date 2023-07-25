@@ -44,8 +44,7 @@ def connect_to_database():
     print('searching for sinners.')
 
     try:
-        mydb = mysql.connector.connect(user='rstx', password="basedbase666", host="localhost", database="sinners",
-                                       auth_plugin='mysql_native_password')
+        mydb = mysql.connector.connect(user='rstx', password="basedbase666", host="localhost", database="sinners")
 
         # Printing the connection object
         print(mydb)
@@ -53,7 +52,7 @@ def connect_to_database():
         return(mydb)
 
     except:
-        print('can''tconnect to db')
+        print('can''t connect to db on loser.church')
         return(-1)
 
 # define class room
@@ -66,7 +65,6 @@ class room(object):
             self.id = int(roomIdFromName(name))
             try:
                 db = connect_to_database() # connect to db, get db to do stuff
-                print('lol')
             except:
                 print('cant access db on loser.church')
 
