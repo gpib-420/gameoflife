@@ -28,11 +28,14 @@ def roomIdFromName(input):
 def openRoom(room_name:str):
     print('YOU ARE IN ROOM %s'%room_name)
     print('checking the database...')
-    print('looking for room %s'%room_name+' with ID %s'%int(roomIdFromName(room_name)))
+    rmid = int(roomIdFromName(room_name))
+    print('looking for room %s'%room_name+' with ID %d'%rmid)
     database = 0
     print('do mysql things with that database and get all comments for room %s' % room_name)
     print('if no comments for %s, create that room' % room_name)
     print('if found comments for %s, open room and populate with comments' % room_name)
+    newRoom = room()
+    return room
 
 
 # define class room
@@ -40,11 +43,31 @@ class room(object):
     id=0
     name='000'
     html_page = None
-    def __init__(self,args=0):
-        print('room created. Id %d'%self.id)
+    def __init__(self,name=None):
+        if name:
+            self.id = int(roomIdFromName(name))
+            print('room created. Id %d'%self.id)
+            loserPageTemplate = '''
+                    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+                    <html>
+                    <head>
+                        <meta content="text/html; charset=ISO-8859-1"
+                        http-equiv="content-type">
+                        <title>{room}</title>
+                    </head>
+                    <body>
+                    room {room}
+                    <hr>
+                    <div>
+                        <input id="comment" maxlength="64" class="input" type="text" placeholder="sin">
+                        <button id="post-comment-btn" class="py-button" type="submit" py-click="post_comment()">
+                        enter
+                        </button>
+                    </div>
+                    <hr>
+                    sys: id {id}
+                    </body>
+                    </html>'''  # NEW note '{person}' two lines up
 
+            self.html_page = loserPageTemplate.format(room=self.name, id=self.id)
 
-
-
-
-    
