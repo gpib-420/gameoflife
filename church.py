@@ -44,7 +44,7 @@ def connect_to_database():
     print('searching for sinners.')
 
     try:
-        mydb = mysql.connector.connect(user='rstx', password="basedbase666", host="http://loser.church", database="sinners")
+        mydb = mysql.connector.connect(user='rsty', password="qwerty", host="localhost", database="sinners")
 
         # Printing the connection object
         print(mydb)
